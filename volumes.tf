@@ -1,4 +1,3 @@
-# # volumes
 resource "hcloud_volume" "master" {
   name      = "volume1"
   size      = 50
