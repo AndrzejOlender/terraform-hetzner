@@ -27,7 +27,7 @@ resource "hcloud_server" "node3" {
 }
 
 resource "hcloud_server" "main" {
-  image = data.hcloud_image.image_1.name
+  image = data.hcloud_image.k3os.name
 }
 
 resource "hcloud_server" "k3os" {
