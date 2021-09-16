@@ -10,7 +10,7 @@ resource "hcloud_server" "node1" {
   ssh_keys    = ["nuc","mac"]
   provisioner "local-exec" {
     command = <<-EOT
-    bash echo "test" > /test.txt
+    echo "test" > /test.txt
         EOT
   }
 }
