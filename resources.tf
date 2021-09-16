@@ -1,6 +1,7 @@
 # hcloud
 data "hcloud_image" "k3os" {
-  id = "45780948"
+  id   = "48035117"
+  type = "snapshot"
 }
 resource "hcloud_server" "node1" {
   name        = "node1"
