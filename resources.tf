@@ -26,10 +26,10 @@ resource "hcloud_server" "node3" {
   ssh_keys    = ["nuc"]
 }
 
-resource "hcloud_server" "k3os" {
-  name        = "k3os"
-  server_type = "cx21"
-  datacenter  = data.hcloud_datacenter.ds.name
-  image       = data.hcloud_image.k3os.name
-  ssh_keys    = ["nuc"]
-}
+#resource "hcloud_server" "k3os" {
+#  name        = "k3os"
+#  server_type = "cx21"
+#  datacenter  = data.hcloud_datacenter.ds.name
+#  image       = data.hcloud_image.k3os.name
+#  ssh_keys    = ["nuc"]
+#}
