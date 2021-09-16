@@ -1,6 +1,6 @@
 # hcloud
 data "hcloud_image" "k3os" {
-  name = "fedora-34"
+  id = "37004880"
 }
 resource "hcloud_server" "node1" {
   name        = "node1"
