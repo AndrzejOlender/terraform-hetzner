@@ -9,9 +9,7 @@ resource "hcloud_server" "node1" {
   image       = "ubuntu-20.04"
   ssh_keys    = ["nuc","mac"]
   provisioner "local-exec" {
-    command = <<-EOT
-    sudo echo "test" > /test.txt
-        EOT
+    command = "echo test > test.txt"
   }
 }
 
