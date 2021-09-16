@@ -13,6 +13,7 @@ resource "hcloud_server" "node1" {
       "echo abc > /abc.txt"
     ]
   }
+}
 
 resource "hcloud_server" "node2" {
   name        = "node2"
