@@ -8,14 +8,10 @@ resource "hcloud_server" "node1" {
   datacenter  = data.hcloud_datacenter.ds.name
   image       = "ubuntu-20.04"
   ssh_keys    = ["nuc","mac"]
-  provisioner "file" {
-    source      = "script/bootstrap.sh"
-    destination = "/tmp/bootstrap.sh"
-  }
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/bootstrap.sh",
-      "/tmp/bootstrap.sh args",
+      "curl -sLS https://get.k3sup.dev | sh",
+      "sudo install k3sup /usr/local/bin/",
     ]
   }
 
