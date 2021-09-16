@@ -1,7 +1,8 @@
 # hcloud
-data "hcloud_image" "k3os" {
-  id   = "48035117"
-}
+#data "hcloud_image" "k3os" {
+#  id   = "48035117"
+#}
+
 resource "hcloud_server" "node1" {
   name        = "node1"
   server_type = "cx21"
@@ -29,8 +30,11 @@ resource "hcloud_server" "node3" {
 resource "hcloud_server" "k3os" {
   name        = "k3os"
   server_type = "cx21"
-  type        = "snapshot"
   datacenter  = data.hcloud_datacenter.ds.name
   image       = data.hcloud_image.k3os.name
   ssh_keys    = ["nuc"]
+}
+
+resource "hcloud_snapshot" "k3os" {
+  id = 48035117
 }
