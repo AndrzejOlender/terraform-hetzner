@@ -30,6 +30,6 @@ resource "hcloud_server" "main" {
   name        = "main"
   server_type = "cx21"
   datacenter  = data.hcloud_datacenter.ds.name
-  image = data.hcloud_image.image_1.name
+  image = data.hcloud_image.image_1.id
   ssh_keys    = ["nuc"]
 }
