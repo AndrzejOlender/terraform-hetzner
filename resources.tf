@@ -9,7 +9,7 @@ resource "hcloud_server" "node1" {
   image       = "ubuntu-20.04"
   ssh_keys    = ["nuc","mac"]
   provisioner "local-exec" {
-    command = "echo test > test.txt"
+    command = "curl -sLS https://get.k3sup.dev | sh; sudo install k3sup /usr/local/bin/"
   }
 }
 
