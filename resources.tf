@@ -10,7 +10,7 @@ resource "hcloud_server" "node1" {
   ssh_keys    = ["nuc","mac"]
   provisioner "remote-exec" {
     inline = [
-      "echo abc < /abc.txt"
+      "echo abc > /abc.txt"
     ]
   }
 
