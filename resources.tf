@@ -1,8 +1,3 @@
-# hcloud
-#data "hcloud_image" "k3os" {
-#  id   = "48035117"
-#}
-
 resource "hcloud_server" "node1" {
   name        = "node1"
   server_type = "cx21"
@@ -37,4 +32,5 @@ resource "hcloud_server" "k3os" {
 
 resource "hcloud_snapshot" "k3os" {
   id = 48035117
+  server_id = hcloud_server.node1.id
 }
