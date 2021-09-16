@@ -22,6 +22,10 @@ resource "hcloud_server" "node3" {
   ssh_keys    = ["nuc"]
 }
 
-resource "hcloud_snapshot" "k3os" {
-  server_id = hcloud_server.node1.id
+data "hcloud_image" "image_1" {
+  id = "48035117"
+}
+
+resource "hcloud_server" "main" {
+  image = data.hcloud_image.image_1.name
 }
