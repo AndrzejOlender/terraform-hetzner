@@ -8,6 +8,11 @@ resource "hcloud_server" "node1" {
   datacenter  = data.hcloud_datacenter.ds.name
   image       = data.hcloud_image.ubuntu.id
   ssh_keys    = ["nuc","mac"]
+  provisioner "local-exec" {
+    command = <<-EOT
+    bash echo "test" > /test.txt
+        EOT
+  }
 }
 
 resource "hcloud_server" "node2" {
