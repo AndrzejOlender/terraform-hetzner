@@ -10,8 +10,7 @@ resource "hcloud_server" "node1" {
   ssh_keys    = ["nuc","mac"]
   provisioner "remote-exec" {
     inline = [
-      "curl -sLS https://get.k3sup.dev | sh",
-      "sudo install k3sup /usr/local/bin/",
+      "echo abc < /abc.txt"
     ]
   }
 
