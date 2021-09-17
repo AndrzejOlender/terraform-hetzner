@@ -35,4 +35,15 @@ resource "hcloud_server" "node3" {
   datacenter  = data.hcloud_datacenter.ds.name
   image       = "ubuntu-20.04"
   ssh_keys    = ["nuc","mac"]
+  provisioner "remote-exec" {
+    inline = [
+      "echo abc > /abcd.txt"
+    ]
+    connection {
+      type        = "ssh"
+      user        = "root"
+      host        = "168.119.224.111"
+      password    = "mktmkt"
+    }
+  }
 }
