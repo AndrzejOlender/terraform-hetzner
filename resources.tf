@@ -17,7 +17,7 @@ resource "hcloud_server" "node1" {
       agent       = "true"
       user        = "root"
       host        = "168.119.224.111"
-      private_key = ["ssh-priv-mac"]
+      private_key = "ssh-priv-mac"
     }
   }
 }
