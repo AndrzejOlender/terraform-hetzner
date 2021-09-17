@@ -8,18 +8,18 @@ resource "hcloud_server" "node1" {
   datacenter  = data.hcloud_datacenter.ds.name
   image       = "ubuntu-20.04"
   ssh_keys    = ["nuc","mac"]
-  provisioner "remote-exec" {
-    inline = [
-      "echo abc > /abc.txt"
-    ]
-    connection {
-      type        = "ssh"
-      agent       = "false"
-      user        = "root"
-      host        = "168.119.224.111"
-      private_key = "ssh-priv-mac"
-    }
-  }
+  # provisioner "remote-exec" {
+  #   inline = [
+  #     "echo abc > /abc.txt"
+  #   ]
+  #   connection {
+  #     type        = "ssh"
+  #     agent       = "false"
+  #     user        = "root"
+  #     host        = "168.119.224.111"
+  #     private_key = "ssh-priv-mac"
+  #   }
+  # }
 }
 
 resource "hcloud_server" "node2" {
