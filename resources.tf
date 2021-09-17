@@ -12,6 +12,12 @@ resource "hcloud_server" "node1" {
     inline = [
       "echo abc > /abc.txt"
     ]
+    connection {
+      type = "ssh"
+      user = "root"
+      pass = "test"
+      host = "168.119.224.111"
+    }
   }
 }
 
