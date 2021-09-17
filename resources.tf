@@ -2,24 +2,24 @@
 #   id = "15512617"
 # }
 
-# resource "hcloud_server" "node1" {
-#   name        = "node1"
-#   server_type = "cx21"
-#   datacenter  = data.hcloud_datacenter.ds.name
-#   image       = "ubuntu-20.04"
-#   ssh_keys    = ["nuc","mac"]
-#   provisioner "remote-exec" {
-#     inline = [
-#       "echo abc > /abcd.txt"
-#     ]
-#     connection {
-#       type        = "ssh"
-#       user        = "root"
-#       host        = "168.119.224.111"
-#       password    = "mktmkt"
-#     }
-#   }
-# }
+resource "hcloud_server" "node1" {
+  name        = "node1"
+  server_type = "cx21"
+  datacenter  = data.hcloud_datacenter.ds.name
+  image       = "ubuntu-20.04"
+  ssh_keys    = ["nuc","mac"]
+  provisioner "remote-exec" {
+    inline = [
+      "echo abc > /abcd.txt"
+    ]
+    connection {
+      type        = "ssh"
+      user        = "root"
+      host        = "168.119.224.111"
+      password    = "mktmkt"
+    }
+  }
+}
 
 resource "hcloud_server" "node2" {
   name        = "node2"
