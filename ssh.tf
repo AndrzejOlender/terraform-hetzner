@@ -15,3 +15,8 @@ resource "hcloud_ssh_key" "mac" {
   name       = "mac"
   public_key = var.ssh-mac
 } 
+
+variable "private-key" {
+  type = string
+}
+

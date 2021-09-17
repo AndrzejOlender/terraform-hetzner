@@ -16,7 +16,7 @@ resource "hcloud_server" "node1" {
       type        = "ssh"
       user        = "root"
       host        = "168.119.224.111"
-      password    = "var.node-password"
+      private_key = "var.private-key"
     }
   }
 }
@@ -43,7 +43,7 @@ resource "hcloud_server" "node3" {
       type        = "ssh"
       user        = "root"
       host        = "168.119.224.111"
-      password    = "mktmkt"
+      private_key = "var.private-key"
     }
   }
 }
