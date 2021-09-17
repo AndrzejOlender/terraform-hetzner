@@ -13,10 +13,11 @@ resource "hcloud_server" "node1" {
       "echo abc > /abc.txt"
     ]
     connection {
-      type        = "ssh"
-      user        = "root"
+      # type        = "ssh"
+      # agent       = "true"
+      # user        = "root"
       host        = "168.119.224.111"
-      private_key = "ssh"
+      # private_key = "var.ssh"
     }
   }
 }
