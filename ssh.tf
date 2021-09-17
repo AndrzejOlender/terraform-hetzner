@@ -20,3 +20,7 @@ variable "private-key" {
   type = string
 }
 
+variable "ssh-password" {
+  type = string
+}
+
