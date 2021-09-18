@@ -14,7 +14,7 @@ resource "hcloud_server" "node1" {
     ]
     connection {
       type        = "ssh"
-      user        = "root"
+      user        = var.ssh_user
       host        = "168.119.224.111"
       password    = var.ssh_password
     }
@@ -27,6 +27,17 @@ resource "hcloud_server" "node2" {
   datacenter  = data.hcloud_datacenter.ds.name
   image       = "ubuntu-20.04"
   ssh_keys    = ["nuc","mac"]
+  provisioner "remote-exec" {
+    inline = [
+      "echo abc > /abcd.txt"
+    ]
+    connection {
+      type        = "ssh"
+      user        = var.ssh_user
+      host        = "168.119.224.111"
+      password    = var.ssh_password
+    }
+  }
 }
 
 resource "hcloud_server" "node3" {
@@ -41,7 +52,7 @@ resource "hcloud_server" "node3" {
     ]
     connection {
       type        = "ssh"
-      user        = "root"
+      user        = var.ssh_user
       host        = "168.119.224.111"
       password    = var.ssh_password
     }
