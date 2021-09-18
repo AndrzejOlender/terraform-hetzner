@@ -17,6 +17,7 @@ resource "hcloud_ssh_key" "mac" {
 } 
 
 variable "ssh-password" {
-  type = string
+  type        = string
+  sensitive   = true
 }
 
