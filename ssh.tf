@@ -2,6 +2,7 @@ variable "ssh" {
   type = string
 }
 
+
 resource "hcloud_ssh_key" "nuc" {
   name       = "nuc"
   public_key = var.ssh
