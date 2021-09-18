@@ -1,6 +1,7 @@
 # data "hcloud_image" "ubuntu" {
 #   id = "15512617"
 # }
+variable "sh_password" {}
 
 resource "hcloud_server" "node1" {
   name        = "node1"
@@ -16,7 +17,7 @@ resource "hcloud_server" "node1" {
       type        = "ssh"
       user        = "root"
       host        = "168.119.224.111"
-      password    = "var.ssh-password"
+      password    = var.ssh-password
     }
   }
 }
@@ -43,7 +44,7 @@ resource "hcloud_server" "node3" {
       type        = "ssh"
       user        = "root"
       host        = "168.119.224.111"
-      password    = "var.ssh-password"
+      password    = var.ssh-password
     }
   }
 }
