@@ -1,23 +1,22 @@
-variable "ssh" {
+variable "ssh_nuc" {
   type = string
 }
 
-
 resource "hcloud_ssh_key" "nuc" {
   name       = "nuc"
-  public_key = var.ssh
+  public_key = var.ssh_nuc
 } 
 
-variable "ssh-mac" {
+variable "ssh_mac" {
   type = string
 }
 
 resource "hcloud_ssh_key" "mac" {
   name       = "mac"
-  public_key = var.ssh-mac
+  public_key = var.ssh_mac
 } 
 
-variable "ssh-password" {
+variable "ssh_password" {
   type        = string
   sensitive   = true
 }
