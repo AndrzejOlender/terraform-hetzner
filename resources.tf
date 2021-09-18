@@ -1,7 +1,6 @@
 # data "hcloud_image" "ubuntu" {
 #   id = "15512617"
 # }
-variable "sh_password" {}
 
 resource "hcloud_server" "node1" {
   name        = "node1"
