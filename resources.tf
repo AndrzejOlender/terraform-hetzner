@@ -6,7 +6,7 @@ resource "hcloud_server" "node1" {
   ssh_keys    = ["nuc","mac"]
   provisioner "remote-exec" {
     inline = [
-      "echo ${var.ssh_user} > /abcd.txt"
+      "echo ${var.ssh_user} > /user.txt"
     ]
     connection {
       type        = "ssh"
@@ -25,7 +25,7 @@ resource "hcloud_server" "node2" {
   ssh_keys    = ["nuc","mac"]
   provisioner "remote-exec" {
     inline = [
-      "echo ${var.ssh_user} > /abcd.txt"
+      "echo ${var.ssh_user} > /user.txt"
     ]
     connection {
       type        = "ssh"
@@ -44,7 +44,7 @@ resource "hcloud_server" "node3" {
   ssh_keys    = ["nuc","mac"]
   provisioner "remote-exec" {
     inline = [
-      "echo abc > /abcd.txt"
+      "echo ${var.ssh_user} > /user.txt"
     ]
     connection {
       type        = "ssh"
