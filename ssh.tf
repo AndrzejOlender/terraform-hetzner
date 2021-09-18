@@ -20,6 +20,3 @@ variable "ssh-password" {
   type = string
 }
 
-variable "ssh_password" {
-  type = string
-}
