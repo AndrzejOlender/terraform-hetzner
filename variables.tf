@@ -7,11 +7,11 @@ variable "ssh_mac" {
 }
 
 variable "ssh_password" {
-  type        = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "ssh_user" {
-  type        = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
