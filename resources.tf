@@ -6,11 +6,12 @@ resource "hcloud_server" "node1" {
   ssh_keys    = ["nuc","mac"]
   provisioner "remote-exec" {
     inline = [
-      "echo ${var.ssh_user} > /user.txt"
+      "curl -sLS https://get.k3sup.dev | sh",
+      "sudo install k3sup /usr/local/bin/"    
     ]
     connection {
       type        = "ssh"
-      host        = "168.119.224.111"
+      host        = hcloud_server.node1.ipv4_address
       user        = var.ssh_user
       password    = var.ssh_password
     }
@@ -25,11 +26,12 @@ resource "hcloud_server" "node2" {
   ssh_keys    = ["nuc","mac"]
   provisioner "remote-exec" {
     inline = [
-      "echo ${var.ssh_user} > /user.txt"
+      "curl -sLS https://get.k3sup.dev | sh",
+      "sudo install k3sup /usr/local/bin/"
     ]
     connection {
       type        = "ssh"
-      host        = "168.119.224.111"
+      host        = hcloud_server.node2.ipv4_address
       user        = var.ssh_user
       password    = var.ssh_password
     }
@@ -44,11 +46,12 @@ resource "hcloud_server" "node3" {
   ssh_keys    = ["nuc","mac"]
   provisioner "remote-exec" {
     inline = [
-      "echo ${var.ssh_user} > /user.txt"
+      "curl -sLS https://get.k3sup.dev | sh",
+      "sudo install k3sup /usr/local/bin/"
     ]
     connection {
       type        = "ssh"
-      host        = "168.119.224.111"
+      host        = hcloud_server.node3.ipv4_address
       user        = var.ssh_user
       password    = var.ssh_password
     }
