@@ -16,11 +16,10 @@ resource "hcloud_ssh_key" "mac" {
   public_key = var.ssh-mac
 } 
 
-variable "private-key" {
-  type = string
-}
-
 variable "ssh-password" {
   type = string
 }
 
+variable "ssh_password" {
+  type = string
+}
