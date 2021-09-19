@@ -70,7 +70,7 @@ module "cluster" {
 
   master_type = "cx21"
   node_groups = {
-    "cx21" = 4
+    "cx21" = 1
   }
 }
 
