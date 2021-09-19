@@ -19,3 +19,5 @@ variable "ssh_user" {
 variable "hetzner_token" {
   type = string
 }
+
+
