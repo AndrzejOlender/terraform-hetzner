@@ -58,28 +58,9 @@
 #   }
 # }
 
-# module "k8s" {
-#   source  = "tibordp/dualstack-k8s/hcloud"
-#   version = "0.6.4"
-
-#   name               = "k8s"
-#   hcloud_ssh_key     = hcloud_ssh_key.nuc.id
-#   hcloud_token       = var.hetzner_token
-#   location           = "hel1"
-#   master_server_type = "cx21"
-#   worker_server_type = "cx21"
-#   worker_count       = 2
-
-#   kubernetes_version = "1.22.0"
-# }
-
-# output "kubeconfig" {
-#   value = module.k8s.kubeconfig
-# }
-
 module "cluster" {
   source  = "cicdteam/k3s/hcloud"
-  version = "0.1.1"
+  version = "0.1.2"
   hcloud_token = var.hcloud_token
   ssh_keys = [hcloud_ssh_key.nuc.id]
 }
@@ -88,12 +69,6 @@ output "master_ipv4" {
   depends_on  = [module.cluster]
   description = "Public IP Address of the master node"
   value       = module.cluster.master_ipv4
-}
-
-output "nodes_ipv4" {
-  depends_on  = [module.cluster]
-  description = "Public IP Address of the worker nodes"
-  value       = module.cluster.nodes_ipv4
 }
 
 output "nodes_ipv4" {
