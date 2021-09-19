@@ -95,3 +95,9 @@ output "nodes_ipv4" {
   description = "Public IP Address of the worker nodes"
   value       = module.cluster.nodes_ipv4
 }
+
+output "nodes_ipv4" {
+  depends_on  = [module.cluster]
+  description = "Public IP Address of the worker nodes"
+  value       = module.cluster.nodes_ipv4
+}
