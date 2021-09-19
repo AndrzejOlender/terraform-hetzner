@@ -15,3 +15,7 @@ variable "ssh_user" {
   type      = string
   sensitive = true
 }
+
+variable "hetzner_token" {
+  type = string
+}
