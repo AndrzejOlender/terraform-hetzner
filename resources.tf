@@ -65,11 +65,11 @@ module "cluster" {
   ssh_keys     = [hcloud_ssh_key.nuc.id]
   datacenter   = "nbg1-dc3"
 
-  master_type = "cx31"
+  master_type = "cx21"
   node_groups = {
     "cx21" = 2
   }
-  k3s_channel = "v1.20"
+  k3s_channel = "v1.21"
 }
 
 output "master_ipv4" {
