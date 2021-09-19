@@ -23,11 +23,3 @@ variable "hetzner_token" {
 variable "hcloud_token" {
   type = string
 }
-
-variable "node_groups" {
-  description = "Map of worker node groups, key is server_type, value is count of nodes in group"
-  type        = map(string)
-  default = {
-    "cx21" = 2
-  }
-}

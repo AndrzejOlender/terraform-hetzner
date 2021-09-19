@@ -59,10 +59,18 @@
 # }
 
 module "cluster" {
-  source  = "cicdteam/k3s/hcloud"
-  version = "0.1.2"
+  source       = "cicdteam/k3s/hcloud"
+  version      = "0.1.2"
   hcloud_token = var.hcloud_token
-  ssh_keys = [hcloud_ssh_key.nuc.id]
+  ssh_keys     = [hcloud_ssh_key.nuc.id]
+
+  master_type = "cx31"
+
+  node_groups = {
+    "cx21" = 3
+    "cx41" = 3
+    "cx51" = 2
+  }
 }
 
 output "master_ipv4" {
