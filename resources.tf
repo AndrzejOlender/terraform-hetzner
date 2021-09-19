@@ -57,3 +57,22 @@ resource "hcloud_server" "node3" {
     }
   }
 }
+
+module "k8s" {
+  source  = "tibordp/dualstack-k8s/hcloud"
+  version = "0.6.4"
+
+  name               = "k8s"
+  hcloud_ssh_key     = hcloud_ssh_key.nuc.id
+  hcloud_token       = var.hetzner_token
+  location           = "hel1"
+  master_server_type = "cx31"
+  worker_server_type = "cx31"
+  worker_count       = 2
+
+  kubernetes_version = "1.22.0"
+}
+
+output "kubeconfig" {
+  value = module.k8s.kubeconfig
+}
