@@ -20,4 +20,7 @@ variable "hetzner_token" {
   type = string
 }
 
+variable "hcloud_token" {
+  type = string
+}
 
