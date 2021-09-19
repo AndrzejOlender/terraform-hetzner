@@ -63,14 +63,13 @@ module "cluster" {
   version      = "0.1.2"
   hcloud_token = var.hcloud_token
   ssh_keys     = [hcloud_ssh_key.nuc.id]
+  datacenter   = "nbg1-dc3"
 
   master_type = "cx31"
-
   node_groups = {
-    "cx21" = 3
-    "cx41" = 3
-    "cx51" = 2
+    "cx21" = 2
   }
+  k3s_channel = "v1.20"
 }
 
 output "master_ipv4" {
@@ -84,3 +83,4 @@ output "nodes_ipv4" {
   description = "Public IP Address of the worker nodes"
   value       = module.cluster.nodes_ipv4
 }
+
