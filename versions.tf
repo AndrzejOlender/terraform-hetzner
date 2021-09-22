@@ -7,7 +7,6 @@ terraform {
   }
   backend "remote" {
     organization = "olender"
-
     workspaces {
       name = "terraform-hetzner"
     }
