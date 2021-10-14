@@ -6,7 +6,7 @@ module "cluster" {
   datacenter   = "nbg1-dc3"
   cluster_name = "k8s"
   image        = "ubuntu-20.04"
-  k3s_channel  = "v1.21"
+  k3s_channel  = "v1.22"
   master_type  = "cx21"
   node_groups  = {
     "cx21" = 2
