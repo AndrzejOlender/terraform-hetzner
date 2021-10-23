@@ -9,3 +9,4 @@ variable "ssh_mac" {
 variable "hcloud_token" {
   type = string
 }
+
