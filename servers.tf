@@ -7,10 +7,10 @@ module "cluster" {
   datacenter   = "nbg1-dc3"
   cluster_name = "k8s"
   image        = "ubuntu-20.04"
-  k3s_channel  = "v1.21"
+  k3s_channel  = "v1.21-1"
   master_type  = "cx21"
   node_groups  = {
-    "cx21" = 2
+    "cx21" = 1
   }
 }
 
@@ -33,12 +33,12 @@ module "cluster" {
   hcloud_token = var.hcloud_token
   ssh_keys     = ["nuc", "mac"]
   datacenter   = "nbg1-dc3"
-  cluster_name = "k8s"
+  cluster_name = "k8s-2"
   image        = "ubuntu-20.04"
   k3s_channel  = "v1.21"
   master_type  = "cx21"
   node_groups  = {
-    "cx21" = 2
+    "cx21" = 1
   }
 }
 
