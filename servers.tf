@@ -14,6 +14,7 @@ module "cluster" {
   }
 }
 
+# network output
 output "master_ipv4" {
   depends_on  = [module.cluster]
   description = "Public IP Address of the master node"
