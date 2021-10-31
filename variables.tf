@@ -10,10 +10,6 @@ variable "hcloud_token" {
   type = string
 }
 
-variable "hcloud_token" {
-  description = "Hetzner cloud auth token"
-}
-
 variable "cluster_name" {
   description = "Cluster name (prefix for all resource names)"
   default     = "hetzner"
