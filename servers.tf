@@ -28,7 +28,7 @@ module "k3s-ext" {
   hcloud_token                 = var.hcloud_token
   issuer_email                 = var.cloudflare_email
   enable_apps                  = true
-  public_key_path              = file(var.ssh_mac)
+  public_key_path              = file(var.ssh_)
 
   //optional
   k3s_version         = "v1.21.1+k3s1" //"v1.19.11+k3s1" "v1.20.7+k3s1" "v1.21.1+k3s1"
@@ -38,6 +38,11 @@ module "k3s-ext" {
     "cx21" = 1
     "cx21" = 1
   }
+}
+
+resource "hcloud_ssh_key" "default" {
+  name       = "Terraform key"
+  public_key = file(var.ssh_mac)
 }
 
 # # network output
