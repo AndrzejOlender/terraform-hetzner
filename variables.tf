@@ -21,3 +21,7 @@ variable "cloudflare_api_token" {
 variable "cloudflare_email" {
   type = string
 }
+
+variable "public_key_path" {
+  type = string
+}
