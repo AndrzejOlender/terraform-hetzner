@@ -27,7 +27,7 @@ module "master" {
   datacenter   = var.datacenter
   image        = var.image
   node_type    = var.master_type
-  ssh_keys     = var.ssh_keys
+  ssh_keys     = ["nuc", "mac"]
 
   hcloud_network_id = hcloud_network.private.id
   hcloud_subnet_id  = hcloud_network_subnet.subnet.id
@@ -43,7 +43,7 @@ module "node_group" {
   cluster_name = var.cluster_name
   datacenter   = var.datacenter
   image        = var.image
-  ssh_keys     = var.ssh_keys
+  ssh_keys     = ["nuc", "mac"]
   master_ipv4  = module.master.master_ipv4
 
   hcloud_subnet_id = hcloud_network_subnet.subnet.id
