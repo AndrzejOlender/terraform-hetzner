@@ -28,7 +28,7 @@ module "k3s-ext" {
   hcloud_token                 = var.hcloud_token
   issuer_email                 = var.cloudflare_email
   enable_apps                  = true
-  public_key                   = var.ssh_nuc
+  ssh_keys                     = ["nuc", "mac"]
 
   //optional
   k3s_version         = "v1.21.1+k3s1" //"v1.19.11+k3s1" "v1.20.7+k3s1" "v1.21.1+k3s1"
