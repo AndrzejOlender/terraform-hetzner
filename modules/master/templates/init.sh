@@ -34,3 +34,7 @@ kubectl -n kube-system create secret generic hcloud-csi --from-literal=token=${h
 cat <<'EOF' | sudo tee /var/lib/rancher/k3s/server/manifests/hcloud-csi.yaml
 ${csi_manifest}
 EOF
+
+# argocd
+kubectl create ns argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
