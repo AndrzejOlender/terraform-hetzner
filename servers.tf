@@ -17,9 +17,9 @@
 
 
 resource "hcloud_ssh_key" "default" {
+  name       = "Terraform key"
   public_key = var.public_key_path
 }
-
 # cluster 1
 module "k3s-ext" {
   source                       = "deyaeddin/k3s-ext/hcloud"
@@ -34,7 +34,8 @@ module "k3s-ext" {
   hcloud_token                 = var.hcloud_token
   issuer_email                 = var.cloudflare_email
   enable_apps                  = true
-  public_key_path              = var.public_key_path  
+  public_key_path              = var.public_key_path
+  
 
   //optional
   k3s_version         = "v1.21.1+k3s1" //"v1.19.11+k3s1" "v1.20.7+k3s1" "v1.21.1+k3s1"
