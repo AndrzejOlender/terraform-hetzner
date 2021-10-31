@@ -30,10 +30,11 @@ variable "master_type" {
   default     = "cx21" # 2 vCPU, 4 GB RAM, 40 GB Disk space
 }
 
-# variable "ssh_keys" {
-#   type        = list
-#   description = "List of public ssh_key ids"
-# }
+variable "ssh_keys" {
+  type        = list
+  description = "List of public ssh_key ids"
+  default     = ["nuc", "mac"]
+}
 
 variable "k3s_channel" {
   default = "stable"
