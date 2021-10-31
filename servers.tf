@@ -14,6 +14,12 @@
 #   }
 # }
 
+
+
+resource "hcloud_ssh_key" "default" {
+  name       = "Terraform key"
+  public_key = file(var.ssh_mac)
+}
 # cluster 1
 module "k3s-ext" {
   source                       = "deyaeddin/k3s-ext/hcloud"
@@ -37,11 +43,6 @@ module "k3s-ext" {
     "cx21" = 1
     "cx21" = 1
   }
-}
-
-resource "hcloud_ssh_key" "default" {
-  name       = "Terraform key"
-  public_key = file(var.ssh_mac)
 }
 
 # # network output
