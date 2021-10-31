@@ -1,9 +1,9 @@
 data "template_file" "ccm_manifest" {
-  template = file("${path.module}/manifestos/hcloud-ccm-net.yaml")
+  template = file("${path.module}/menifests/hcloud-ccm-net.yaml")
 }
 
 data "template_file" "csi_manifest" {
-  template = file("${path.module}/manifestos/hcloud-csi.yaml")
+  template = file("${path.module}/menifests/hcloud-csi.yaml")
 }
 
 data "template_file" "master_init" {

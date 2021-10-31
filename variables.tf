@@ -12,12 +12,12 @@ variable "hcloud_token" {
 
 variable "cluster_name" {
   description = "Cluster name (prefix for all resource names)"
-  default     = "hetzner"
+  default     = "k8s"
 }
 
 variable "datacenter" {
   description = "Hetzner datacenter where resources resides, hel1-dc2 (Helsinki 1 DC 2) or fsn1-dc14 (Falkenstein 1 DC14)"
-  default     = "hel1-dc2"
+  default     = "nbg1-dc3"
 }
 
 variable "image" {
@@ -37,7 +37,7 @@ variable "ssh_keys" {
 }
 
 variable "k3s_channel" {
-  default = "stable"
+  default = "v1.21"
 }
 
 variable "node_groups" {
