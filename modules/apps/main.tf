@@ -5,8 +5,6 @@ module "default_backend" {
   default_domain = var.default_domain
   nginx_default_backend = var.nginx_default_backend
   default_namespace = var.default_namespace
-
-  depends_on = [null_resource.helm_updater]
 }
 
 module "octant" {
@@ -15,8 +13,6 @@ module "octant" {
   letsencrypt_is_prod = var.letsencrypt_is_prod
   default_domain = var.default_domain
   default_namespace = var.default_namespace
-
-  depends_on = [null_resource.helm_updater]
 }
 
 
