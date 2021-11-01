@@ -62,19 +62,28 @@ module "kubeconfig" {
   master_ipv4  = module.master.master_ipv4
 }
 
-output "master_ipv4" {
-  depends_on  = [module.master]
-  description = "Public IP Address of the master node"
-  value       = module.master.master_ipv4
-}
-
-output "nodes_ipv4" {
-  depends_on  = [module.node_group]
-  description = "Public IP Address of the worker nodes in groups"
-  value = {
-    for type, n in module.node_group :
-    type => n.node_ipv4
-  }
+module "apps" {
+  source                   = "./modules/apps"
+  cluster_name             = var.cluster_name
+  k3s_config_file          = var.k3s_config_file
+  cluster_issuer_name      = var.cluster_issuer_name
+  letsencrypt_is_prod      = var.letsencrypt_is_prod
+  issuer_email             = var.issuer_email
+  cert_manager_solver_type = var.cert_manager_solver_type
+  hcloud_dns_api_token     = var.hcloud_dns_api_token
+  default_domain           = var.default_domain
+  lb_hcloud_location       = var.lb_hcloud_location
+  lb_hcloud_name           = var.lb_hcloud_name
+  lb_hcloud_protocol       = var.lb_hcloud_protocol
+  nginx_default_backend    = var.nginx_default_backend
+  default_namespace        = var.default_namespace
+  dns_provider             = var.dns_provider
+  cloud_flare_api_email    = var.cloudflare_email
+  cloud_flare_api_key      = var.cloudflare_api_key
+  cloud_flare_api_proxied  = var.cloud_flare_api_proxied
+  cloud_flare_api_token    = var.cloudflare_api_token
+  storage_class            = var.storage_class
+  depends_on               = [module.master]
 }
 
 # # cluster 1
