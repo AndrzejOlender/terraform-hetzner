@@ -22,10 +22,6 @@ variable "cloudflare_api_token" {
   type = string
 }
 
-variable "issuer_email" {
-  description = "email for issuing certificates with LetsEncrypt"
-}
-
 variable "cluster_name" {
   description = "Cluster name (prefix for all resource names)"
   default     = "k8s"
