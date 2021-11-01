@@ -82,12 +82,12 @@ variable "letsencrypt_is_prod" {
 
 variable "cert_manager_solver_type" {
   description = "which solver cert-manger will use, values : HTTP01, DNS01_CLOUDFLARE, DNS01_HETZNER"
-  default = "HTTP01"
+  default     = "HTTP01"
 }
 
 variable "hcloud_dns_api_token" {
   description = "hashed Hetzner DNS access token"
-  sensitive = true
+  type        = string
 }
 
 variable "default_domain" {
@@ -96,40 +96,40 @@ variable "default_domain" {
 
 variable "lb_hcloud_location" {
   description = "location of the loadbalancer"
-  default = "nbg1-dc3"
+  default     = "nbg1-dc3"
 }
 
 variable "lb_hcloud_name" {
   description = "name of the loadbalancer"
-  default = "name_cluster_lb"
+  default     = "name_cluster_lb"
 }
 
 variable "lb_hcloud_protocol" {
   description = "protocol for the loadbalancer"
-  default = "tcp"
+  default     = "tcp"
 }
 
 variable "nginx_default_backend" {
   description = "nginx ingress controller default backend service name"
-  default = "default-backend"
+  default     = "default-backend"
 }
 
 variable "default_namespace" {
   description = "default applications namespace"
-  default = "apps"
+  default     = "apps"
 }
 
 variable "dns_provider" {
   description = "DNS provider to use. Values can be hetzner or cloudflare"
-  default = "cloudflare"
+  default     = "cloudflare"
 }
 
 variable "cloud_flare_api_proxied" {
   description = "wither the zone will be proxied on cloudflare "
-  default = false
+  default     = false
 }
 
 variable "storage_class" {
   description = "storage class to use with minio drivers"
-  default = "hcloud-volumes"
+  default     = "hcloud-volumes"
 }

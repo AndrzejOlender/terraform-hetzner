@@ -1,20 +1,3 @@
-
-resource "null_resource" "helm_updater" {
-
-  provisioner "local-exec" {
-    command = <<EOT
-        helm repo add stable https://charts.helm.sh/stable
-        helm repo add bitnami https://charts.bitnami.com/bitnami
-        helm repo add jetstack https://charts.jetstack.io
-        helm repo add deyaeddin https://deyaeddin.github.io/cert-manager-webhook-hetzner/chart/
-        helm repo add minio https://operator.min.io/
-        helm repo add octant-dashboard https://deyaeddin.github.io/octant-dashboard-turnkey/repo
-        helm repo update
-    EOT
-  }
-}
-
-
 module "default_backend" {
   source = "./default-backend"
   cluster_issuer_name = var.cluster_issuer_name
