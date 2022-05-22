@@ -22,7 +22,7 @@ variable "datacenter" {
 
 variable "image" {
   description = "Node boot image"
-  default     = "ubuntu-20.04"
+  default     = "ubuntu-22.04"
 }
 
 variable "master_type" {
@@ -37,7 +37,7 @@ variable "ssh_keys" {
 }
 
 variable "k3s_channel" {
-  default = "v1.21"
+  default = "v1.23"
 }
 
 variable "node_groups" {
