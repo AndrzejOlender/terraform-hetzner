@@ -4,8 +4,8 @@ apt-get -yq update
 apt-get install -yq \
     ca-certificates \
     curl \
+    apt-transport-https \
     ntp
-
 
 # k3s
 curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=${k3s_channel} K3S_TOKEN=${k3s_token} sh -s - \
@@ -36,5 +36,5 @@ ${csi_manifest}
 EOF
 
 # argocd
-kubectl create ns argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+# kubectl create ns argocd
+# kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
