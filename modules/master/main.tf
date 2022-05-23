@@ -1,11 +1,18 @@
 data "template_file" "ccm_manifest" {
-  template = file("${path.module}/menifests/hcloud-ccm-net.yaml")
+  template = file("${path.module}/manifests/hcloud-ccm-net.yaml")
 }
 
 data "template_file" "csi_manifest" {
-  template = file("${path.module}/menifests/hcloud-csi.yaml")
+  template = file("${path.module}/manifests/hcloud-csi.yaml")
 }
 
+data "template_file" "csi_manifest" {
+  template = file("${path.module}/manifests/system-upgrade-controller.yaml")
+}
+
+data "template_file" "csi_manifest" {
+  template = file("${path.module}/manifests/system-upgrade-plan.yaml")
+}
 data "template_file" "master_init" {
   template = file("${path.module}/templates/init.sh")
   vars = {
