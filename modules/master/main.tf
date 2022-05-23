@@ -6,11 +6,11 @@ data "template_file" "csi_manifest" {
   template = file("${path.module}/manifests/hcloud-csi.yaml")
 }
 
-data "template_file" "csi_manifest" {
+data "template_file" "csi_upgrade_controller" {
   template = file("${path.module}/manifests/system-upgrade-controller.yaml")
 }
 
-data "template_file" "csi_manifest" {
+data "template_file" "csi_upgrade_plan" {
   template = file("${path.module}/manifests/system-upgrade-plan.yaml")
 }
 data "template_file" "master_init" {

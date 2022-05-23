@@ -34,7 +34,7 @@ metadata:
   labels:
     k3s-upgrade: agent
 spec:
-  concurrency: 2 # in general, this should be the number of workers - 1
+  concurrency: 1 # in general, this should be the number of workers - 1
   #version: v1.18.8+k3s1
   channel: https://update.k3s.io/v1-release/channels/stable
   nodeSelector:

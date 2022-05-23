@@ -17,7 +17,7 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=${k3s_channel} K3S_TOKEN=${k3
     --node-taint node-role.kubernetes.io/master:NoSchedule \
     --kubelet-arg 'cloud-provider=external'
 
-# menifests addons
+# manifests addons
 while ! test -d /var/lib/rancher/k3s/server/manifests; do
     echo "Waiting for '/var/lib/rancher/k3s/server/manifests'"
     sleep 1
